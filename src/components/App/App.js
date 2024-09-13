@@ -13,13 +13,15 @@ const App = ()=> {
     }, [])
 
     return (
-        <main>
-            {apiData.map((char, index)=> {
-                return <div key={index}>
-                    <img src={char.image} alt='' />
-                    <p>{char.name}</p>
-                </div>
-            })}
+        <main className='out-cont'>
+            <div className='char-list'>
+                {apiData.map((char, index)=> {
+                    return <div key={index} className='char'>
+                        <img src={char.image} alt='' />
+                        <p>{char.name}</p>
+                    </div>
+                })}
+            </div>
         </main>
     )
 }
