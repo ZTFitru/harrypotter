@@ -3,7 +3,7 @@
     padding: 30px 100px 25px 50px;
     display: flex;
     justify-content: space-between;
-    font-size: 14px;
+    font-size: 16px;
     color: #e5e5e5;
     background-color: black;
     z-index: 1;
@@ -23,5 +23,22 @@
         gap: 20px;
     } li {
         cursor: pointer;
+        color: #AF7625;
     }
+}
+
+.nav-g:hover {
+    color: #740001;
+}
+
+.nav-h:hover {
+    color: #ecb939;
+}
+
+.nav-r:hover {
+    color: #0e1a40;
+}
+
+.nav-s:hover {
+    color: #1a472a;
 }

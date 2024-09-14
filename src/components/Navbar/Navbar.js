@@ -9,11 +9,11 @@ const Navbar = ()=> {
                 <div>
                     <img src={logo} alt='Harry Potter Logo' />
                 </div>
-                <ul>
-                    <li>Gryffindor</li>
-                    <li>Hufflepuff</li>
-                    <li>Ravenclaw</li>
-                    <li>Slytherin</li>
+                <ul role='tablist'>
+                    <li className='nav-g'>Gryffindor</li>
+                    <li className='nav-h'>Hufflepuff</li>
+                    <li className='nav-r'>Ravenclaw</li>
+                    <li className='nav-s'>Slytherin</li>
                 </ul>
             </nav>
         </header>
