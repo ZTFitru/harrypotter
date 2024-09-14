@@ -1,14 +1,15 @@
 import './Navbar.css'
 import logo from '../../assets/mainLogo-main.png'
+import { Link } from 'react-router-dom';
 
 const Navbar = ()=> {
 
     return (
         <header className='nav-cont'>
             <nav className='navbar'>
-                <div>
+                <Link to={'/'} >
                     <img src={logo} alt='Harry Potter Logo' />
-                </div>
+                </Link>
                 <ul role='tablist'>
                     <li className='nav-g'>Gryffindor</li>
                     <li className='nav-h'>Hufflepuff</li>
