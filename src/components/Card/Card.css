@@ -1,0 +1,38 @@
+.char-card {
+    background-color: #f1f1ff;
+    border: 5px solid #dab333;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+    /* height: 100vh; */
+}
+
+.char-pro {
+    position: relative;
+    img {
+        width: 250px;
+        height: 300px;
+        border-radius: 50%;
+        border: 3px solid #333;
+    }
+    h1 {
+        font-size: 2rem;
+        margin: 10px 0;
+        color: #b47825;
+    }
+}
+
+.char-details {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 20px 5px rgba(0,0,0,0.1);
+    p {
+        font-family: 'Garamond', serif;
+        font-size: 18px;
+    }
+}
+
+

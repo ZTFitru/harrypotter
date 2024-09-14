@@ -4,6 +4,7 @@ import Footer from '../Footer/Footer';
 import { Route, Routes } from 'react-router-dom';
 import Titlepage from '../Titlepage/Titlepage';
 import SortedHouse from '../SortedHouse/SortedHouse';
+import Card from '../Card/Card';
 
 const App = ()=> {
 
@@ -13,7 +14,7 @@ const App = ()=> {
             <Routes>
                 <Route path='/' element={<Titlepage />} />
                 <Route path='/:house' element={<SortedHouse />} />
-                {/* <Route path='/:house' element={<} */}
+                <Route path='/character/:id' element={<Card />} />
             </Routes>
             <Footer />
         </main>
