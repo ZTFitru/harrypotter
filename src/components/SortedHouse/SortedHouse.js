@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import './SortedHouse.css'
 import { Link, useParams } from 'react-router-dom';
-
+import defaultImage from '../../assets/default.jpg'
+import {sortedByHouseCall} from '../ApiCalls'
 
 const houseColors = {
     gryffindor: '#ae0001',
@@ -16,8 +17,7 @@ const SortedHouse = ()=> {
     const [apiHouse, setApiHouse] = useState([]);
 
     useEffect(()=> {
-        fetch(`https://harry-potter-api-gray.vercel.app/api/v1/characters/house/${house}`)
-        .then(response => response.json())
+        sortedByHouseCall(house)
         .then(data => setApiHouse(data))
         .catch(err => console.log(err))
     }, [house])
@@ -30,7 +30,7 @@ const SortedHouse = ()=> {
                         key={student.id}
                         className='card'
                         >
-                        <img src={student.image  } alt={student.name} />
+                        <img src={student.image || defaultImage} alt={student.name} />
                         <h2>{student.name}</h2>
                     </Link>
                 ))}
