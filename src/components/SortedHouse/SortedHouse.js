@@ -2,6 +2,14 @@ import { useEffect, useState } from 'react';
 import './SortedHouse.css'
 import { Link, useParams } from 'react-router-dom';
 
+
+const houseColors = {
+    gryffindor: '#ae0001',
+    hufflepuff: '#ecb939',
+    ravenclaw: '#222f5b',
+    slytherin: '#2a623d'
+}
+
 const SortedHouse = ()=> {
 
     const { house } = useParams()
@@ -14,9 +22,9 @@ const SortedHouse = ()=> {
         .catch(err => console.log(err))
     }, [house])
     return (
-        <div>
+        <div className='data-container' style={{backgroundColor: houseColors[house]}}>
             <h1>{house.toUpperCase()}</h1>
-            <div>
+            <div className='house-container'>
                 {apiHouse.map((student)=> (
                     <Link to={`/character/${student.id}`}
                         key={student.id}

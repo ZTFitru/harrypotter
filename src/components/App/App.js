@@ -13,6 +13,7 @@ const App = ()=> {
             <Routes>
                 <Route path='/' element={<Titlepage />} />
                 <Route path='/:house' element={<SortedHouse />} />
+                {/* <Route path='/:house' element={<} */}
             </Routes>
             <Footer />
         </main>
