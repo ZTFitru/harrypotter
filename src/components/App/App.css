@@ -1,9 +1,13 @@
 
 .out-cont {
-    width: 96%;
+    width: auto;
 }
 .char-list {
     display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
     grid-template-columns: repeat(6, 1fr);
     flex-direction: column;
     align-items: center;
@@ -12,7 +16,6 @@
     padding: 1.5% 1.5%;
     border: solid #bf5709 5px;
     background: linear-gradient(185deg, #112020 25%, #2d3838 50%, #112020 75%);
-    border-radius: 5px;
 }
 
 .char {

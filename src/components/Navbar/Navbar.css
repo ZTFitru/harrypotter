@@ -1,0 +1,26 @@
+.nav-cont {
+    width: 95.7%;
+    padding: 30px 100px 25px 50px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #e5e5e5;
+    background-color: black;
+    z-index: 1;
+}   
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    img {
+        width: 100px;
+    }
+    ul {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+    } li {
+        cursor: pointer;
+    }
+}
