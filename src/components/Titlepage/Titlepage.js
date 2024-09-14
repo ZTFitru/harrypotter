@@ -9,8 +9,6 @@ const Titlepage = ()=> {
     const [apiData, setApiData] = useState([])
 
     useEffect(()=> {
-        // fetch('https://harry-potter-api-gray.vercel.app/api/v1/characters')
-        // .then(response => response.json())
         getCharacters()
         .then(data => setApiData(data))
         .catch(err => console.log(err))
