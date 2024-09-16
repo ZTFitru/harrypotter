@@ -1,19 +1,20 @@
 import './Navbar.css'
 import logo from '../../assets/mainLogo-main.png'
+import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = ()=> {
 
     return (
         <header className='nav-cont'>
             <nav className='navbar'>
-                <div>
+                <Link to={'/'} >
                     <img src={logo} alt='Harry Potter Logo' />
-                </div>
-                <ul>
-                    <li>Gryffindor</li>
-                    <li>Hufflepuff</li>
-                    <li>Ravenclaw</li>
-                    <li>Slytherin</li>
+                </Link>
+                <ul role='tablist'>
+                    <NavLink to={'/gryffindor'} className={'nav-g'}>Gryffindor</NavLink>
+                    <NavLink to={'/hufflepuff'} className={'nav-h'}>Hufflepuff</NavLink>
+                    <NavLink to={'/ravenclaw'} className={'nav-r'}>Ravenclaw</NavLink>
+                    <NavLink to={'/slytherin'} className={'nav-s'}>Slytherin</NavLink>
                 </ul>
             </nav>
         </header>
