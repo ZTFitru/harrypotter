@@ -8,7 +8,6 @@
 }
 
 .char-card {
-    /* background-color: #f1f1ff; */
     background: linear-gradient(175deg, #000000 65%, #FFD700 70%);
     border: 5px solid #dab333;
     border-radius: 10px;
@@ -45,4 +44,30 @@
     }
 }
 
+@media only screen and (max-width: 760px) {
+
+    .char-card {
+        /* height: 300px; */
+        width: 300px;
+        margin-top: 0;
+    }
+
+    .char-pro {
+        margin-top: 0;
+        img {
+            width: 100px;
+            height: 150px;
+        } 
+        h1 {
+            font-size: 16px;
+        }
+    }
+
+    .char-details {
+
+        p {
+            font-size: 13px;
+        }
+    }
+}
 

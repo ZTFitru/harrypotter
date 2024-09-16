@@ -1,5 +1,3 @@
-// import { useEffect, useState } from 'react';
-// import { getCharacters } from '../ApiCalls';
 import { useEffect, useState } from 'react';
 import defaultImage from '../../assets/default.jpg'
 import './Titlepage.css';
@@ -16,7 +14,6 @@ const Titlepage = ({apiData})=> {
     const searchIconClicked = ()=> {
         setIsSearchVisiable(!isSearchVisiable)
     }
-
 
     useEffect(()=> {
         if(apiData) {
