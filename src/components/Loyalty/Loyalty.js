@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import './Loyalty.css'
 import { useEffect, useState } from 'react';
 // import {sortedByGroup} from '../ApiCalls'
@@ -9,6 +9,13 @@ const sortedColors = {
     "Death Eaters": '#2F4F4F',
     "Order of the Phoenix": '#800000',
     "Hogwarts School of Witchcraft and Wizardry": '#F0EAD6'
+}
+
+const sortedFonts = {
+    "Dumbledore's Army": '#C0C0C0',
+    "Death Eaters": '#006400',
+    "Order of the Phoenix": '#FFD700',
+    "Hogwarts School of Witchcraft and Wizardry": '#4B4B4B'
 }
 
 const Loyalty = () => {
@@ -30,12 +37,12 @@ const Loyalty = () => {
         <div className='sort-outter' style={{backgroundColor: sortedColors[loyaltyGroup]}}>
             <h1>Characters in {loyaltyGroup}</h1>
             <div className='sort-list'>
-                {apiCharacters.map((char, index)=> {
-                    return <div className='sort-char' key={index}>
+                {apiCharacters.map((char)=> (
+                     <Link to={`/character/${char.id}`} className='sort-char' key={char.id}>
                         <img src={char.image || defaultImage} alt='' />
-                        <h2>{char.name}</h2>
-                    </div>
-                })}
+                        <h2 style={{color: sortedFonts[loyaltyGroup]}}>{char.name}</h2>
+                    </Link>
+                ))}
             </div>
         </div>
     )
