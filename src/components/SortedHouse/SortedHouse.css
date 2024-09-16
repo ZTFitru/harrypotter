@@ -11,7 +11,6 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    /* background: linear-gradient(185deg, #1f1f1f 25%, #d4af37 50%, #1f1f1f 75%); */
     background-color: #1f1f1f;
     padding-top: 50px;
     img {

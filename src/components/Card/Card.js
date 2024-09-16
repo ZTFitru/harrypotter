@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import './Card.css'
 import { useEffect, useState } from 'react'
 
+
 const Card = ()=> {
     const { id } = useParams()
     const [selectedChar, setSelectedChar] = useState([])
@@ -15,7 +16,8 @@ const Card = ()=> {
     }, [id])
 
     return (
-        <div className='char-card'>
+        <div className='char-container'>
+            <div className='char-card'>
             <div className='char-pro'>
                 <img src={selectedChar.image} alt='' />
                 <h1>{selectedChar.name}</h1>
@@ -24,6 +26,7 @@ const Card = ()=> {
                 <p>{selectedChar.overview}</p>
                 <p>{selectedChar.loyalty}</p>
             </div>
+        </div>
         </div>
     )
 }
