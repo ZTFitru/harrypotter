@@ -1,0 +1,43 @@
+.sort-outter {
+    padding: 10px;
+    h1 {
+        color: black;
+        text-align: center;
+    }
+}
+
+.sort-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    background-color: #1f1f1f;
+    padding-top: 50px;
+    img {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #ddd;
+        border: 10px;
+    }
+}
+
+.sort-char {
+    width: 200px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    img {
+        width: 150px;
+        height: 200px; 
+        object-fit:cover;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        background-color: #fff;
+    }
+    h2 {
+        font-size: 17px;
+        color: #b47825;
+    }
+}
