@@ -15,6 +15,8 @@
     gap: 50px;
     img {
         width: 100px;
+        height: 100px;
+        border-radius: 50%;
     }
     ul {
         display: flex;
@@ -41,4 +43,16 @@
 
 .nav-s:hover {
     color: #1a472a;
+}
+
+
+@media screen and (min-width: 400px) {
+    .nav-cont {
+        font-size: 13px;
+    }
+
+    .navbar img {
+        width: 50px;
+        height: 50px;
+    }
 }

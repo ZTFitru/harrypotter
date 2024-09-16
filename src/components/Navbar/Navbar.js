@@ -1,6 +1,7 @@
 import './Navbar.css'
 import logo from '../../assets/mainLogo-main.png'
 import { Link, NavLink } from 'react-router-dom';
+import mainLogo from '../../assets/home-logo.jpg'
 
 const Navbar = ()=> {
 
@@ -8,7 +9,7 @@ const Navbar = ()=> {
         <header className='nav-cont'>
             <nav className='navbar'>
                 <Link to={'/'} >
-                    <img src={logo} alt='Harry Potter Logo' />
+                    <img src={mainLogo} alt='Harry Potter Logo' />
                 </Link>
                 <ul role='tablist'>
                     <NavLink to={'/gryffindor'} className={'nav-g'}>Gryffindor</NavLink>
