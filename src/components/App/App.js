@@ -7,6 +7,7 @@ import SortedHouse from '../SortedHouse/SortedHouse';
 import Card from '../Card/Card';
 import { getCharacters } from '../ApiCalls';
 import { useState, useEffect } from 'react';
+import Loyalty from '../Loyalty/Loyalty';
 
 const App = ()=> {
 
@@ -25,6 +26,7 @@ const App = ()=> {
                 <Route path='/' element={<Titlepage apiData={apiData}/>} />
                 <Route path='/:house' element={<SortedHouse />} />
                 <Route path='/character/:id' element={<Card />} />
+                <Route path='/loyalty/:loyaltyGroup' element={<Loyalty />} />
             </Routes>
             <Footer />
         </main>
