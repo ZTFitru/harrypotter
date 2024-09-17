@@ -1,6 +1,6 @@
-.out-cont {
+/* .out-cont {
     width: 100%;
-}
+} */
 
 .char-list {
     display: flex;
@@ -82,10 +82,16 @@
 
 @media only screen and (max-width: 760px) {
 
+    .out-cont {
+        width: 97.8%;
+    }
+
     .char-list {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        grid-template-columns: repeat(3, 1fr);
         gap: 0;
+        width: 100%;
     }
     .char {
         width: 90px;
@@ -104,6 +110,8 @@
     }
 
     .search-container {
+        /* width: 100%; */
+        margin-left: 4px;
         img {
             width: 20px;
         }

@@ -19,6 +19,10 @@
 }
 
 @media only screen and (max-width: 760px) {
+
+    /* .footer-cont {
+        width: 6%;
+    } */
     .footer {
         display: flex;
         padding-right: 20px;
