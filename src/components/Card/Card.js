@@ -9,6 +9,20 @@ const Card = ()=> {
     const { id } = useParams()
     const [selectedChar, setSelectedChar] = useState([])
 
+    const [userList, setUserList] = useState([])
+
+
+    useEffect(()=> {
+        localStorage.setItem('characterList', JSON.stringify(userList))
+    }, [userList])
+
+    const addCharacterBtn = ()=> {
+        if(!userList.some(char => char.id === selectedChar.id)) {
+            const list = [...userList, selectedChar]
+            setUserList(list)
+            localStorage.setItem('characterList', JSON.stringify(list))
+        }
+    }
 
     useEffect(()=> {
         getSingleCharacter(id)
@@ -39,6 +53,7 @@ const Card = ()=> {
                             <p>No loyalty groups</p>
                         )}
                     </div>
+                    <button onClick={addCharacterBtn}>Add</button>
                 </div>
             </div>
         </div>
