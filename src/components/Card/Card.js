@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import './Card.css'
 import { useEffect, useState } from 'react'
 import defaultImage from '../../assets/default.jpg'
+import {getSingleCharacter} from '../ApiCalls'
 
 
 const Card = ()=> {
@@ -10,8 +11,7 @@ const Card = ()=> {
 
 
     useEffect(()=> {
-        fetch(`https://harry-potter-api-gray.vercel.app/api/v1/characters/${id}`)
-        .then(res => res.json())
+        getSingleCharacter(id)
         .then(data => setSelectedChar(data))
         .catch(err => console.log(err))
     }, [id])

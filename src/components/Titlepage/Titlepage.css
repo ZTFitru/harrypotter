@@ -38,6 +38,17 @@
     } 
 }
 
+.no-char-message {
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+}
+
+.error-message {
+    font-size: 20px;
+    text-align: center;
+}
+
 .char img:hover {
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
