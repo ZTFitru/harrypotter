@@ -34,7 +34,7 @@
         background-color: #fff;
     }
     p {
-        color: #b47825;
+        color: #c48123;
     } 
 }
 
@@ -69,4 +69,32 @@
     }
 }
 
+@media only screen and (max-width: 760px) {
 
+    .char-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+    }
+    .char {
+        width: 90px;
+        padding-top: 10px;
+        img {
+            width: 70px;
+            height: 90px;
+        }
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .input-search {
+        font-size: 15px;
+    }
+
+    .search-container {
+        img {
+            width: 20px;
+        }
+    }
+}

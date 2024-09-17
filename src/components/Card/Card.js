@@ -20,7 +20,7 @@ const Card = ()=> {
         <div className='char-container'>
             <div className='char-card'>
             <div className='char-pro'>
-                <img src={selectedChar.image || defaultImage} alt='' />
+                <img src={selectedChar.image || defaultImage} alt={`Head shot of ${selectedChar.name}`} />
                 <h1>{selectedChar.name}</h1>
             </div>
             <div className='char-details'>

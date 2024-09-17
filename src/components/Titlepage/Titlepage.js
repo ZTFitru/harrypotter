@@ -47,7 +47,7 @@ const Titlepage = ({apiData})=> {
                 {filteredChar.length > 0 ? (
                     filteredChar.map((char)=> (
                         <Link to={`/character/${char.id}`} className='char' key={char.id}>
-                            <img src={char.image || defaultImage} alt= {char.name} />
+                            <img src={char.image || defaultImage} alt= {`Headshot of ${char.name}`} />
                             <p>{char.name}</p>
                         </Link>
                     ))

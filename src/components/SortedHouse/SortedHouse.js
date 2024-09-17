@@ -30,7 +30,7 @@ const SortedHouse = ()=> {
                         key={student.id}
                         className='card'
                         >
-                        <img src={student.image || defaultImage} alt={student.name} />
+                        <img src={student.image || defaultImage} alt={`Headshot of ${student.name}`} />
                         <h2>{student.name}</h2>
                     </Link>
                 ))}

@@ -39,7 +39,7 @@
     }
     h2 {
         font-size: 17px;
-        color: #b47825;
+        color: #f39b1f;
     }
 }
 
@@ -47,4 +47,28 @@
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
+}
+
+@media only screen and (max-width: 760px) {
+
+    .data-container {
+        h1 {
+            font-size: 15px;
+        }
+    }
+
+    .house-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    .card {
+        img {
+            width: 70px;
+            height: 90px;
+        }
+        h2 {
+            font-size: 12px;
+        }
+    }
 }

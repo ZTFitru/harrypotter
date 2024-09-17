@@ -1,7 +1,7 @@
 .sort-outter {
     padding: 10px;
     h1 {
-        color: black;
+        color: white;
         text-align: center;
     }
 }
@@ -39,5 +39,28 @@
     h2 {
         font-size: 17px;
         color: #b47825;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .sort-outter {
+        h1 {
+            font-size: 15px;
+        }
+    }
+
+    .sort-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    .sort-char {
+        img {
+            width: 70px;
+            height: 90px;
+        }
+        h2 {
+            font-size: 12px;
+        }
     }
 }
