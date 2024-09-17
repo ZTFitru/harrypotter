@@ -9,7 +9,7 @@ export const sortedByHouseCall = async (house)=> {
     return await res.json()
 }
 
-// export const sortedByGroup = async (loyaltyGroup)=> {
-//     const res = await fetch(`https://harry-potter-api-gray.vercel.app/api/v1/characters?loyalty=${loyaltyGroup}`)
-//     return await res.json()
-// }
+export const sortedByGroup = async (loyaltyGroup)=> {
+    const res = await fetch(`https://harry-potter-api-gray.vercel.app/api/v1/characters?loyalty=${loyaltyGroup}`)
+    return await res.json()
+}

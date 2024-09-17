@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import './Loyalty.css'
 import { useEffect, useState } from 'react';
-// import {sortedByGroup} from '../ApiCalls'
+import {sortedByGroup} from '../ApiCalls'
 import defaultImage from '../../assets/default.jpg'
 
 const sortedColors = {
@@ -25,9 +25,7 @@ const Loyalty = () => {
     const [apiCharacters, setApiCharacters] = useState([])
 
     useEffect(()=> {
-        // sortedByGroup(loyaltyGroup)
-        fetch(`https://harry-potter-api-gray.vercel.app/api/v1/characters?loyalty=${loyaltyGroup}`)
-        .then(res => res.json())
+        sortedByGroup(loyaltyGroup)
         .then(data => {
             const sortedChar = data.filter(char => char.loyalty.includes(loyaltyGroup))
             setApiCharacters(sortedChar)
