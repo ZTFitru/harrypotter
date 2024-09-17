@@ -8,14 +8,16 @@ const sortedColors = {
     "Dumbledore's Army": '#003366',
     "Death Eaters": '#2F4F4F',
     "Order of the Phoenix": '#800000',
-    "Hogwarts School of Witchcraft and Wizardry": '#F0EAD6'
+    "Hogwarts School of Witchcraft and Wizardry": '#F0EAD6',
+    "British Ministry of Magic": '#003300'
 }
 
 const sortedFonts = {
     "Dumbledore's Army": '#C0C0C0',
     "Death Eaters": '#006400',
     "Order of the Phoenix": '#FFD700',
-    "Hogwarts School of Witchcraft and Wizardry": '#4B4B4B'
+    "Hogwarts School of Witchcraft and Wizardry": '#4B4B4B',
+    "British Ministry of Magic": '#FFFFFF'
 }
 
 const Loyalty = () => {

@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import './Card.css'
 import { useEffect, useState } from 'react'
 import defaultImage from '../../assets/default.jpg'
@@ -25,7 +25,20 @@ const Card = ()=> {
             </div>
             <div className='char-details'>
                 <p>{selectedChar.overview}</p>
-                <p>{selectedChar.loyalty}</p>
+                <div className='sorted-list'>
+                    {selectedChar.loyalty && selectedChar.loyalty.length > 0 ? (
+                        <p>
+                            {selectedChar.loyalty.map((group, index) => (
+                                <span key={index}>
+                                    <Link to={`/loyalty/${group}`}>{group}</Link>
+                                    {index < selectedChar.loyalty.length - 1 && ', '}
+                                </span>
+                            ))}
+                        </p>
+                    ) : (
+                        <p>No loyalty groups</p>
+                    )}
+                </div>
             </div>
         </div>
         </div>

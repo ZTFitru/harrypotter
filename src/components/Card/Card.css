@@ -44,6 +44,18 @@
     }
 }
 
+.sorted-list {
+    a {
+        text-decoration: none;
+        color: #b47825;
+    }
+}
+
+.sorted-list a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
 @media only screen and (max-width: 760px) {
 
     .char-card {
