@@ -1,6 +1,8 @@
 import { useParams } from 'react-router-dom'
 import './Card.css'
 import { useEffect, useState } from 'react'
+import defaultImage from '../../assets/default.jpg'
+
 
 const Card = ()=> {
     const { id } = useParams()
@@ -15,15 +17,17 @@ const Card = ()=> {
     }, [id])
 
     return (
-        <div className='char-card'>
+        <div className='char-container'>
+            <div className='char-card'>
             <div className='char-pro'>
-                <img src={selectedChar.image} alt='' />
+                <img src={selectedChar.image || defaultImage} alt='' />
                 <h1>{selectedChar.name}</h1>
             </div>
             <div className='char-details'>
                 <p>{selectedChar.overview}</p>
                 <p>{selectedChar.loyalty}</p>
             </div>
+        </div>
         </div>
     )
 }
