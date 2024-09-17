@@ -22,6 +22,7 @@ const Card = ()=> {
             setUserList(list)
             localStorage.setItem('characterList', JSON.stringify(list))
         }
+        console.log('hi')
     }
 
     useEffect(()=> {
