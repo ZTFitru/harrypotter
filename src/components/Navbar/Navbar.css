@@ -68,6 +68,7 @@
         top: 80px; 
         left: 0;
         width: 100%;
+        padding-left: 15px;
         a {
             font-size: 10px;
             margin-left: 0;
