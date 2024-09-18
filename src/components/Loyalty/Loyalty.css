@@ -1,4 +1,4 @@
-.data-container {
+.sort-outter {
     padding: 10px;
     h1 {
         color: white;
@@ -6,7 +6,7 @@
     }
 }
 
-.house-container {
+.sort-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -19,14 +19,9 @@
         border-bottom: 1px solid #ddd;
         border: 10px;
     }
-    p {
-        font-size: 30px;
-        color: white;
-    }
-
 }
 
-.card {
+.sort-char {
     width: 200px;
     text-align: center;
     text-decoration: none;
@@ -43,30 +38,23 @@
     }
     h2 {
         font-size: 17px;
-        color: #f39b1f;
+        color: #b47825;
     }
 }
 
-.card img:hover {
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-}
-
 @media only screen and (max-width: 760px) {
-
-    .data-container {
+    .sort-outter {
         h1 {
             font-size: 15px;
         }
     }
 
-    .house-container {
+    .sort-list {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 8px;
     }
-    .card {
+    .sort-char {
         img {
             width: 70px;
             height: 90px;

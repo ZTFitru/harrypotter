@@ -6,7 +6,7 @@ const Footer = ()=> {
     return (
         <div className='footer-cont'>
             <div className='footer'>
-                <img src={logo} alt='Harry Potter Logo' />
+                <img src={logo} alt={`Website logo`} />
             </div>
         </div>
     )

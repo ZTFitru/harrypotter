@@ -1,0 +1,19 @@
+
+
+.error-cont {
+    background-color: #002043;
+}
+
+.error-page {
+    height: 100vh;
+    text-align: center;
+    padding: 50px;
+    h1 {
+        font-size: 150px;
+        margin: 0;
+        color: white;
+    } p {
+        font-size: 50px;
+        color: white;
+    } 
+}

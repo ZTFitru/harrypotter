@@ -17,3 +17,17 @@
         width: 100px;
     }
 }
+
+@media only screen and (max-width: 760px) {
+
+    /* .footer-cont {
+        width: 6%;
+    } */
+    .footer {
+        display: flex;
+        padding-right: 20px;
+        img {
+            width: 80px;
+        }
+    }
+}
