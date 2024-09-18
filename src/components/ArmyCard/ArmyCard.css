@@ -1,4 +1,12 @@
 .army-outter {
+    padding: 10px;
+    h1 {
+        color: rgb(0, 0, 0);
+        text-align: center;
+    }
+}
+
+.army-cont {
     display: flex;
     flex-direction: column;
     justify-content: center;

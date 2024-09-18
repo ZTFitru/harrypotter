@@ -55,7 +55,7 @@
     display: none;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 846px) {
 
     /* .nav-cont {
         width: 100%;
@@ -88,7 +88,7 @@
     }
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 449px) {
 
     .icon-links {
         a {
