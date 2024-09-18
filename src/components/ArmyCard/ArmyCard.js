@@ -13,7 +13,7 @@ const ArmyCard = ()=> {
     }, [])
 
     return (
-        <div>
+        <div className='army-outter'>
             <h1>Somthing something</h1>
             {list.map((char, index)=> {
                 return <div className='army-list' key={index}>

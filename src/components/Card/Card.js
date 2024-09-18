@@ -13,16 +13,17 @@ const Card = ()=> {
 
 
     useEffect(()=> {
-        localStorage.setItem('characterList', JSON.stringify(userList))
+        localStorage.getItem('characterList', JSON.stringify(userList))
     }, [userList])
 
     const addCharacterBtn = ()=> {
         if(!userList.some(char => char.id === selectedChar.id)) {
             const list = [...userList, selectedChar]
             setUserList(list)
+            // console.log(list)
             localStorage.setItem('characterList', JSON.stringify(list))
         }
-        console.log('hi')
+        // console.log('hi')
     }
 
     useEffect(()=> {
