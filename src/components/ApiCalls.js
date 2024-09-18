@@ -1,6 +1,9 @@
 
 export const getCharacters = async ()=> {
     const response = await fetch('https://harry-potter-api-gray.vercel.app/api/v1/characters')
+    if(!response.ok) {
+        throw new Error('Bad Network')
+    }
     return await response.json()
 }
 
@@ -22,5 +25,8 @@ export const sortedByHouseCall = async (house)=> {
 
 export const sortedByGroup = async (loyaltyGroup)=> {
     const res = await fetch(`https://harry-potter-api-gray.vercel.app/api/v1/characters?loyalty=${loyaltyGroup}`)
+    if(!res.ok) {
+        throw new Error('Bad Network')
+    }
     return await res.json()
 }
