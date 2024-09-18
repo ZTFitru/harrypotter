@@ -50,6 +50,18 @@
     p {
         color: #c48123;
     } 
+    button {
+        font-size: 15px;
+        background-color: black;
+        color: white;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+}
+
+.army-list button:hover {
+    background-color: white;
+    color: black;
 }
 
 ul li::marker {
