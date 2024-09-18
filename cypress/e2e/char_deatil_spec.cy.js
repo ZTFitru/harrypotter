@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('Character details spec', () => {
   beforeEach(()=> {
     cy.intercept('GET', `https://harry-potter-api-gray.vercel.app/api/v1/characters`, {
       statusCode: 200,
@@ -14,7 +14,7 @@ describe('template spec', () => {
   })
 
 
-  it('passes', () => {
+  it('should display overview of a character', () => {
     cy.get('[href="#/character/ca3827f0-375a-4891-aaa5-f5e8a5bad225"] > img').click()
     cy.get('h1').contains('h1', 'Squidward')
     cy.get('.char-details > :nth-child(1)').should('be.visible')

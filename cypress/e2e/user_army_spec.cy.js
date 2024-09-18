@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('User List spec', () => {
   beforeEach(()=> {
     cy.intercept('GET', `https://harry-potter-api-gray.vercel.app/api/v1/characters`, {
       statusCode: 200,
@@ -18,7 +18,7 @@ describe('template spec', () => {
     cy.visit('http://localhost:3000/')
   })
 
-  it('passes', () => {
+  it('should be able to check if characters are added or removed to user list', () => {
     cy.get('[href="#/character/ca3827f0-375a-4891-aaa5-f5e8a5bad225"] > img').click()
     cy.get('button').should('be.visible')
     cy.get('button').click()
