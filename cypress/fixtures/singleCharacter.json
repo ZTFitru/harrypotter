@@ -1,0 +1,10 @@
+[
+    {
+        "id": "12",
+        "name": "SpongeBob",
+        "overview": "Spongebob loves to fish.'",
+        "house": "Gryffindor",
+        "loyalty": ["Dumbledore's Army", "Hogwarts School of Witchcraft and Wizardry", "Order of the Phoenix"],
+        "image": "https://upload.wikimedia.org/wikipedia/en/3/3b/SpongeBob_SquarePants_character.svg"
+    }
+]

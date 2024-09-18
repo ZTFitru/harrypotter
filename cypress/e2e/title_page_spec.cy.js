@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('Title page spec', () => {
   beforeEach(()=> {
     cy.intercept('GET', 'https://harry-potter-api-gray.vercel.app/api/v1/characters', {
       statusCode: 200,

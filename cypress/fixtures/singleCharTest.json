@@ -1,0 +1,10 @@
+[
+    {
+        "id": "25",
+        "name": "Squidward",
+        "overview":"Professor Minerva McGonagall, was a Scottish half-blood witch, the only daughter of Muggle Robert McGonagall and witch Isobel Ross. She also was the older sister of Malcolm and Robert Jnr. Minerva attended Hogwarts School of Witchcraft and Wizardry and was Sorted into Gryffindor House, but it took the Sorting Hat five and a half minutes to decide if she was Gryffindor or Ravenclaw, which made her a Hatstall. During her seventh year, she was appointed Head Girl.",
+        "house": "Hufflepuff",
+        "loyalty": ["Hogwarts School of Witchcraft and Wizardry", "Dumbledore's Army", "Order of the Phoenix"],
+        "image": "https://upload.wikimedia.org/wikipedia/en/thumb/7/79/Squidward_Tentacles_%28fair_use%29.svg/640px-Squidward_Tentacles_%28fair_use%29.svg.png"
+      }
+]

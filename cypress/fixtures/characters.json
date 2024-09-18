@@ -11,7 +11,7 @@
         "id": "4c7e6819-a91a-45b2-a454-f931e4a7cce3",
         "name": "Patrick",
         "overview": "Hermione Granger is one of the central characters in J.K. Rowling's Harry Potter series. She is a highly intelligent and resourceful witch, known for her academic excellence and strong moral compass. Born to non-magical (Muggle) parents, Hermione discovers her magical abilities and attends Hogwarts School of Witchcraft and Wizardry, where she becomes best friends with Harry Potter and Ron Weasley.",
-        "house": "Gryffindor",
+        "house": "Ravenclaw",
         "loyalty": ["Dumbledore's Army", "Hogwarts School of Witchcraft and Wizardry", "Order of the Phoenix"],
         "image": "https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Patrick_Star.svg/640px-Patrick_Star.svg.png"
       },
@@ -35,7 +35,7 @@
         "id": "ca3827f0-375a-4891-aaa5-f5e8a5bad225",
         "name": "Squidward",
         "overview":"Professor Minerva McGonagall, was a Scottish half-blood witch, the only daughter of Muggle Robert McGonagall and witch Isobel Ross. She also was the older sister of Malcolm and Robert Jnr. Minerva attended Hogwarts School of Witchcraft and Wizardry and was Sorted into Gryffindor House, but it took the Sorting Hat five and a half minutes to decide if she was Gryffindor or Ravenclaw, which made her a Hatstall. During her seventh year, she was appointed Head Girl.",
-        "house": "Gryffindor",
+        "house": "Hufflepuff",
         "loyalty": ["Hogwarts School of Witchcraft and Wizardry", "Dumbledore's Army", "Order of the Phoenix"],
         "image": "https://upload.wikimedia.org/wikipedia/en/thumb/7/79/Squidward_Tentacles_%28fair_use%29.svg/640px-Squidward_Tentacles_%28fair_use%29.svg.png"
       }
