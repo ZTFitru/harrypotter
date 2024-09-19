@@ -1,5 +1,15 @@
 # <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Man%20Mage.png" alt="Man Mage" width="25" height="25" /> HARRY POTTER
 
+## Installation Instructions:
+
+1. Select `fork`.
+2. Decide where you want to clone this repo in `YOUR` terminal.
+3. Select the `Code` button and copy the `SSH` provided.
+4. `YOUR` terminal command should look like the line below.
+5. `git clone git@github.com:ZTFitru/harrypotter.git`
+6. Move into the directory using `cd [dir_name]`.
+7. Run `npm install` or `npm i` to install dependencies.
+
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Milky%20Way.png" alt="Milky Way" width="25" height="25" /> Overview:
 - While attending `Turing School of Software and Design`, I was assigned to create a `React` application to showcase my understanding of `React`. This application allows `Harry Potter` fans explore the world of wizards and witches that are mentioned in the books or have been seen in the movies. This application gets the data from an API I created using an express server and running on `Vercel`. When the user visits the application, they are greeted with a clickable door. Once they click on the door, the door will open and a button will appear for them to click it. Once they click it, they will be taken to a page where all the characters are displayed. They have the option to click on the four houses in the navigation bar, they can click on the search icon to look for a character or they can find and select a character from the list. If they click on a character, they can view details about the character. There is a small detail about the character and what group they are loyal to. They have the ability to select the loyalty tag to view all the characters that belong to that group. A user can also build their own loyalty group by adding a character to their list.
 
