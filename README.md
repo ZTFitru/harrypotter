@@ -10,6 +10,7 @@
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Grinning%20Face%20with%20Big%20Eyes.png" alt="Grinning Face with Big Eyes" width="25" height="25" /> Wins & Challenges
 - Wins
     - After given a lesson on express, I was able to create an express server for my API. I wanted to create an API that would work for the React application I was creating. 
+    - I had trouble trying to figure out how to make the door in my landing page to open like they did in Harry Potter. After playing around with the css, I think I have come close to the main door at Hogwarts.
 
 - Challenges
     - I wanted the colors to change based on the house colors when a user hovered over the text in my navigation bar. To fix that problem, I had to style my color hovering effect in my components JS file instead of my CSS file.
