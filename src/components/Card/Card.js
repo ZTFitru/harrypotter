@@ -9,6 +9,40 @@ const Card = ()=> {
     const { id } = useParams()
     const [selectedChar, setSelectedChar] = useState([])
 
+    const [userList, setUserList] = useState(()=> {
+        const savedCharacters = localStorage.getItem('army');
+        return savedCharacters ? JSON.parse(savedCharacters) : []
+    })
+
+    const addCharacterBtn = ()=> {
+        if(!userList.some(char => char.id === selectedChar.id)) {
+            const list = [...userList, selectedChar]
+            setUserList(list)
+            localStorage.setItem('army', JSON.stringify(list))
+        }
+    }
+
+    // const deleteCharacterBtn = ()=> {
+    //     const removedList = [...userList, selectedChar]
+    //     localStorage.removeItem('army', JSON.stringify(removedList))
+    // }
+
+    // const [userList, setUserList] = useState([])
+
+
+    // useEffect(()=> {
+    //     localStorage.getItem('characterList', JSON.stringify(userList))
+    // }, [userList])
+
+    // const addCharacterBtn = ()=> {
+    //     if(!userList.some(char => char.id === selectedChar.id)) {
+    //         const list = [...userList, selectedChar]
+    //         setUserList(list)
+    //         // console.log(list)
+    //         localStorage.setItem('characterList', JSON.stringify(list))
+    //     }
+    //     // console.log('hi')
+    // }
 
     useEffect(()=> {
         getSingleCharacter(id)
@@ -39,6 +73,8 @@ const Card = ()=> {
                             <p>No loyalty groups</p>
                         )}
                     </div>
+                    <button onClick={addCharacterBtn}>Add</button>
+                    {/* <button onClick={deleteCharacterBtn}>Remove</button> */}
                 </div>
             </div>
         </div>

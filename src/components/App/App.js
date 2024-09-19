@@ -9,6 +9,7 @@ import { getCharacters } from '../ApiCalls';
 import { useState, useEffect } from 'react';
 import Loyalty from '../Loyalty/Loyalty';
 import ErrorHandling from '../ErrorHandling/ErrorHandling';
+import ArmyCard from '../ArmyCard/ArmyCard';
 
 const App = ()=> {
 
@@ -29,6 +30,7 @@ const App = ()=> {
                 <Route path='/:house' element={<SortedHouse />} />
                 <Route path='/character/:id' element={<Card />} />
                 <Route path='/loyalty/:loyaltyGroup' element={<Loyalty />} />
+                <Route path='/mylist' element={<ArmyCard />} />
                 <Route path='*' element={<ErrorHandling error={error}/>} />
             </Routes>
             <Footer />
