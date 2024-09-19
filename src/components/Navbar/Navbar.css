@@ -12,6 +12,10 @@
 
 }
 
+.icon-links {
+    display: flex;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
