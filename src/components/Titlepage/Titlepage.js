@@ -27,7 +27,7 @@ const Titlepage = ({apiData, error})=> {
     }, [userInput, apiData])
 
     return (
-        <section className='out-cont'>
+        <div className='out-cont'>
             {error && <p className='error-message'>{error}</p>}
             <div className='search-container'>
                 <img src={searchLogo} alt='search icon' className='search-icon' onClick={searchIconClicked} />
@@ -60,7 +60,7 @@ const Titlepage = ({apiData, error})=> {
                     <h1 className='no-char-message'>Sorry, can't find that character.</h1>
                 )}
             </div>
-        </section>
+        </div>
     )
 }
 
