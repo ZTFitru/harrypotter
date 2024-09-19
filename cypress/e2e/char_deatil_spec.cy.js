@@ -16,9 +16,13 @@ describe('Character details spec', () => {
 
   it('should display overview of a character', () => {
     cy.get('.door').click()
-    cy.get('.text').click()
     cy.get('[href="#/character/ca3827f0-375a-4891-aaa5-f5e8a5bad225"] > img').click()
     cy.get('h1').contains('h1', 'Squidward')
     cy.get('.char-details > :nth-child(1)').should('be.visible')
+  })
+
+  it('should be able to return home', ()=> {
+    cy.get('.door').click()
+    cy.get('.char-list').should('be.visible')
   })
 })

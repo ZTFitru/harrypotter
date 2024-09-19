@@ -17,7 +17,6 @@ describe('Title page spec', () => {
 
   it('Should be able to search for character', () => {
     cy.get('.door').click()
-    cy.get('.text').click()
     cy.get('.search-icon').click()
     cy.get('.input-search').type('SpongeBob')
     cy.get('.char').should('exist')

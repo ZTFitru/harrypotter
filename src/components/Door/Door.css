@@ -51,6 +51,18 @@
   transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px) rotateY(105deg);
 }
 
+.img-cont {
+    display: flex;
+    justify-content: center;
+    /* margin-top: 20px; */
+}
+
+.enter-img {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+}
+
 .btn-cont {
     position: absolute;
     top: 80%;

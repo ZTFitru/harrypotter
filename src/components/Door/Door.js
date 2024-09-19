@@ -1,15 +1,19 @@
 import { useState } from 'react'
 import './Door.css'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+
 
 const Door = ()=> {
     const [isOpen, setIsOpen] = useState(false)
     const [showBtn, setShowBtn] = useState(false)
+    const navigate = useNavigate()
 
     const doorStatus = ()=> {
         if(!isOpen) {
             setIsOpen(true)
-            setTimeout(()=> setShowBtn(true), 500)
+            setTimeout(()=> {
+                navigate('/home')
+            }, 800)
         } else {
             setIsOpen(false)
             setShowBtn(false)
@@ -22,13 +26,7 @@ const Door = ()=> {
                 <div className={`new-door ${isOpen ? 'new-doorOpen' : ''}`} onClick={doorStatus}></div>
             </div>
             {showBtn && (
-                <div className='btn-cont'>
-                    <Link to={'/home'}>
-                    <button>
-                        <div className='fancy'></div>
-                        <span className='text'>Enter</span>
-                    </button>
-                    </Link>
+                <div className='img-cont' onClick={doorStatus}>
                 </div>
             )}
             <h1>OPEN THE DOOR TO ENTER</h1>
