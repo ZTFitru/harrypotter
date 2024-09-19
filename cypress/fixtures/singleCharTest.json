@@ -1,0 +1,9 @@
+
+    {
+        "id": "ca3827f0-375a-4891-aaa5-f5e8a5bad225",
+        "name": "Squidward",
+        "overview":"Squidward loves to draw pictures and hates being around Spongebob.",
+        "house": "Hufflepuff",
+        "loyalty": ["Hogwarts School of Witchcraft and Wizardry", "Dumbledore's Army", "Order of the Phoenix"],
+        "image": "https://upload.wikimedia.org/wikipedia/en/thumb/7/79/Squidward_Tentacles_%28fair_use%29.svg/640px-Squidward_Tentacles_%28fair_use%29.svg.png"
+      }

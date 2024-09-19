@@ -1,0 +1,9 @@
+
+    {
+        "id": "9e3f7ce4-b9a7-4244-b709-dae5c1f1d4a8",
+        "name": "SpongeBob",
+        "overview": "Spongebob loves to fish.'",
+        "house": "Gryffindor",
+        "loyalty": ["Dumbledore's Army", "Hogwarts School of Witchcraft and Wizardry", "Order of the Phoenix"],
+        "image": "https://upload.wikimedia.org/wikipedia/en/3/3b/SpongeBob_SquarePants_character.svg"
+    }

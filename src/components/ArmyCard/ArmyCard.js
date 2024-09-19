@@ -7,12 +7,6 @@ const ArmyCard = ()=> {
 
     const [list, setList] = useState([])
 
-    // useEffect(()=> {
-    //     const userList = JSON.parse(localStorage.getItem('characterList'));
-    //     if(userList) {
-    //         setList(userList)
-    //     }
-    // }, [])
     useEffect(()=> {
         const userList = localStorage.getItem('army')
         if(userList) {
@@ -36,7 +30,6 @@ const ArmyCard = ()=> {
                             <Link to={`/character/${char.id}`} className='army-list'>
                                 <img src={char.image || defaultImage} alt={`Headshot of ${char.name}`} />
                                 <p>{char.name}</p>
-                        {/* <button onClick={()=> deleteCharacterBtn(char.id)}>Remove</button> */}
                             </Link>
                             <button onClick={()=> deleteCharacterBtn(char.id)}>Remove</button>
                         </li>
@@ -45,26 +38,7 @@ const ArmyCard = ()=> {
             ) : (
                 <h2 className='empty-message'>No characters in your list</h2>
             )}
-            {/* <button onClick={()=> deleteCharacterBtn(char.id)}>Remove</button> */}
         </div>
-        // <div className='army-outter' >
-        //     <h1>Your Army</h1>
-        //     <div className='army-cont'>
-        //         {list.length > 0 ? (
-        //             list.map(char => (
-        //                 <Link to={`/character/${char.id}`} key={char.id} className='army-list' >
-        //                     <img src={char.image || defaultImage} alt={`Headshot of ${char.name}`} />
-        //                     <p>{char.name}</p>
-        //                     <div>
-        //                         <button onClick={()=> deleteCharacterBtn(char.id)}>Remove</button>
-        //                     </div>
-        //                 </Link>
-        //             ))
-        //         ) : (
-        //             <p className='empty-message'>No characters in your list</p>
-        //         )}
-        //     </div>
-        // </div>
     )
 }
 

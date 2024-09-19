@@ -10,6 +10,7 @@ import { useState, useEffect } from 'react';
 import Loyalty from '../Loyalty/Loyalty';
 import ErrorHandling from '../ErrorHandling/ErrorHandling';
 import ArmyCard from '../ArmyCard/ArmyCard';
+import Door from '../Door/Door';
 
 const App = ()=> {
 
@@ -26,7 +27,8 @@ const App = ()=> {
         <main className='out-cont'>
             <Navbar />
             <Routes>
-                <Route path='/' element={<Titlepage apiData={apiData} error={error}/>} />
+                <Route path='/' element={<Door />} />
+                <Route path='/home' element={<Titlepage apiData={apiData} error={error}/>} />
                 <Route path='/:house' element={<SortedHouse />} />
                 <Route path='/character/:id' element={<Card />} />
                 <Route path='/loyalty/:loyaltyGroup' element={<Loyalty />} />
