@@ -109,7 +109,7 @@ button {
     }
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 762px) {
 
     .door-cont {
         width: 100%;
@@ -118,7 +118,73 @@ button {
         }
     }
 
-    .btn-cont {
+    /* .btn-cont {
         top: 95%;
+    } */
+}
+
+@media (width: 430px) {
+    .btn-cont {
+        top: 69%;
+    }
+}
+
+@media (width: 390px) {
+    .btn-cont {
+        top: 76%;
+    }
+}
+
+@media (width: 414px) {
+    .btn-cont {
+        top: 72%;
+    }
+}
+
+@media (width: 412px) {
+    .btn-cont {
+        top: 70%;
+    }
+}
+
+@media (width: 375px) {
+    .btn-cont {
+        top: 96%;
+    }
+}
+
+@media (width: 360px) {
+    .btn-cont {
+        top: 87%;
+    }
+}
+
+@media (width: 768px) {
+    .btn-cont {
+        top: 63%;
+    }
+}
+
+@media (width: 820px) {
+    .btn-cont {
+        top: 54%;
+    }
+}
+
+@media (width: 853px) {
+    .btn-cont {
+        top: 52%;
+    }
+}
+
+@media (width: 912px) {
+    .btn-cont {
+        top: 49%;
+    }
+}
+
+@media (width: 1024px) {
+    .btn-cont {
+        top: 47%;
     }
 }

@@ -9,8 +9,16 @@
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" alt="Rocket" width="25" height="25" /> Preview of App:
 
+![Preview](src/assets/harrypotterPreview.gif)
 
-## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Writing%20Hand.png" alt="Writing Hand" width="25" height="25" /> Learning Goals
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Writing%20Hand.png" alt="Writing Hand" width="25" height="25" /> Learning Goals:
+
+- `API integration`: Retrieve and display data effectively from an open API
+- `User Interaction`: Implement functionalities that allow users to store and manipulate displayed data.
+- `Routing`: utilize React Router to manage multiple views within the application.
+- `Responsive Design`: Ensure the application is visually appealing and functional across multiple different devices.
+- `Deployment`: Successfully deploy the application on a platform.
+- `Code Quality`: Incorporate PropTypes for all components and ensure best practices in code organization and testing. 
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Grinning%20Face%20with%20Big%20Eyes.png" alt="Grinning Face with Big Eyes" width="25" height="25" /> Wins & Challenges
 - Wins

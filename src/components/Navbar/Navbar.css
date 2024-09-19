@@ -93,6 +93,7 @@
     .icon-links {
         a {
             font-size: 10px;
+            transform: scale(1.5);
         }
     }
 }
@@ -117,6 +118,42 @@
             font-size: 12px;
             margin-top: 0;
             margin-bottom: 0;
+        }
+    }
+}
+
+@media (width: 375px) {
+    .icon-links {
+        a {
+            font-size: 8px;
+            transform: scale(1.5);
+        }
+    }
+}
+
+@media (width: 390px) {
+    .icon-links {
+        a {
+            font-size: 8px;
+            transform: scale(1.5);
+        }
+    }
+}
+
+@media (width: 414px) {
+    .icon-links {
+        a {
+            font-size: 9px;
+            transform: scale(1.5);
+        }
+    }
+}
+
+@media (width: 430px) {
+    .icon-links {
+        a {
+            font-size: 10px;
+            transform: scale(1.5);
         }
     }
 }
