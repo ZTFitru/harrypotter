@@ -10,9 +10,14 @@ describe('Title page spec', () => {
 
   it('Should display the application logo', ()=> {
     cy.get('[href="#/"] > img').should('exist')
+    cy.get('.door').should('exist')
+    cy.get('.new-door').should('exist')
+    cy.get('h1').should('be.visible').and('contain', 'OPEN THE DOOR TO ENTER')
   })
 
   it('Should be able to search for character', () => {
+    cy.get('.door').click()
+    cy.get('.text').click()
     cy.get('.search-icon').click()
     cy.get('.input-search').type('SpongeBob')
     cy.get('.char').should('exist')

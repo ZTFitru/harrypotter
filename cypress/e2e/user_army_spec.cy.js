@@ -19,6 +19,8 @@ describe('User List spec', () => {
   })
 
   it('should be able to check if characters are added or removed to user list', () => {
+    cy.get('.door').click()
+    cy.get('.text').click()
     cy.get('[href="#/character/ca3827f0-375a-4891-aaa5-f5e8a5bad225"] > img').click()
     cy.get('button').should('be.visible')
     cy.get('button').click()
@@ -26,6 +28,8 @@ describe('User List spec', () => {
     cy.url().should('include', '#/mylist')
     cy.get('li.army-list').should('have.length', 1)
     cy.get('[href="#/"] > img').click()
+    cy.get('.door').click()
+    cy.get('.text').click()
     cy.get('[href="#/character/9e3f7ce4-b9a7-4244-b709-dae5c1f1d4a8"] > img').click()
     cy.get('button').click()
     cy.get('.nav-a').click()
@@ -33,6 +37,6 @@ describe('User List spec', () => {
     cy.get(':nth-child(1) > button').click()
     cy.get('li.army-list').should('have.length', 1)
     cy.get('[href="#/"] > img').click()
-    cy.get('.char-list').should('be.visible')
+    cy.get('.door').should('exist')
   })
 })

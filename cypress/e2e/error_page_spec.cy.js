@@ -4,10 +4,12 @@ describe('Error spec', () => {
       statusCode: 404
     });
 
-    cy.visit('http://localhost:3000/asdf')
+    cy.visit('http://localhost:3000/')
   });
 
   it('should display error handling message ', ()=> {
+    cy.get('.door').click()
+    cy.get('.text').click()
     cy.get('.error-message').should('be.visible')
   });
 

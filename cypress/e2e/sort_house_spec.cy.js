@@ -25,6 +25,6 @@ describe('Sorted house spec', () => {
     cy.get('h1').contains('h1', 'HUFFLEPUFF')
     cy.get('[href="#/"] > img').click()
     cy.url().should('include', 'http://localhost:3000/#/')
-    cy.get('[href="#/character/4c7e6819-a91a-45b2-a454-f931e4a7cce3"] > p').should('be.visible').and('contain', 'Patrick')
+    cy.get('.door').should('exist')
   })
 })
