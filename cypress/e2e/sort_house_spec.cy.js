@@ -7,8 +7,8 @@ describe('Sorted house spec', () => {
 
     cy.intercept('GET', `https://harry-potter-api-gray.vercel.app/api/v1/characters/house/gryffindor`, {
       statusCode: 200,
-      fixture: 'singleCharacter'
-    }).as('getSponge')
+      fixture: 'gryiffindorHouse'
+    }).as('getGryiffindorHouse')
 
     cy.intercept('GET', `https://harry-potter-api-gray.vercel.app/api/v1/characters/house/hufflepuff`, {
       statusCode: 200,
@@ -20,11 +20,18 @@ describe('Sorted house spec', () => {
   
   it('should check for characters in houses', () => {
     cy.get('.nav-g').click()
+    cy.wait('@getGryiffindorHouse')
     cy.get('h1').contains('h1', 'GRYFFINDOR')
-    cy.get('.nav-h').click()
-    cy.get('h1').contains('h1', 'HUFFLEPUFF')
-    cy.get('[href="#/"] > img').click()
-    cy.url().should('include', 'http://localhost:3000/#/')
-    cy.get('.door').should('exist')
+    cy.get('.house-container').should('contain', 'SpongeBob')
   })
+
+  it('should check for character that are not in the house', ()=> {
+    cy.get('.nav-g').click()
+    cy.wait('@getGryiffindorHouse')
+    cy.get('h1').contains('h1', 'GRYFFINDOR')
+    cy.get('h1').should('not.contain', 'HUFFLEPUFF')
+    cy.get('.house-container').should('not.contain', 'Squidward')
+  })
+
+
 })
