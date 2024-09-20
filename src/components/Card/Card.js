@@ -14,11 +14,14 @@ const Card = ()=> {
         return savedCharacters ? JSON.parse(savedCharacters) : []
     })
 
+    const [addChar, setAddChar] = useState(false)
+
     const addCharacterBtn = ()=> {
         if(!userList.some(char => char.id === selectedChar.id)) {
             const list = [...userList, selectedChar]
             setUserList(list)
             localStorage.setItem('army', JSON.stringify(list))
+            setAddChar(true)
         }
     }
 
@@ -52,7 +55,11 @@ const Card = ()=> {
                             <p>No loyalty groups</p>
                         )}
                     </div>
-                    <button onClick={addCharacterBtn}>Add</button>
+                    {!addChar ? (
+                        <button onClick={addCharacterBtn}>Add</button>
+                    ) : (
+                        <p>Character added to your army</p>
+                    )}
                 </div>
             </div>
         </div>
