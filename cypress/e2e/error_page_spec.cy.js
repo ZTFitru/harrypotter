@@ -9,7 +9,6 @@ describe('Error spec', () => {
 
   it('should display error handling message ', ()=> {
     cy.get('.door').click()
-    cy.get('.text').click()
     cy.get('.error-message').should('be.visible')
   });
 
