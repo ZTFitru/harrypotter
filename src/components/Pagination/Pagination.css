@@ -1,9 +1,36 @@
 
-
 .pagination {
     display: flex;
     justify-content: space-evenly;
     list-style: none;
 }
 
+.pagination a {
+    text-decoration: none; 
+    color: #010101;
+    padding: 5px 10px;
+    border-radius: 4px; 
+    transition: background-color 0.3s, color 0.3s;
+}
 
+.active {
+    background-color: #c48123;
+    color: white; 
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #c48123;
+    color: white;
+}
+
+@media only screen and (max-width: 393px) {
+    .pagination {
+        justify-content: flex-start;
+        padding-left: 0;
+       a {
+            font-size: 10px;
+        } 
+    }
+    
+    
+}
