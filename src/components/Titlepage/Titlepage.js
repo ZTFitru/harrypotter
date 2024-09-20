@@ -4,55 +4,65 @@ import './Titlepage.css';
 import { Link } from 'react-router-dom';
 import searchLogo from '../../assets/search.png'
 import PropTypes from 'prop-types'
+import Pagination from '../Pagination/Pagination';
 
 
-const Titlepage = ({apiData, error})=> {
 
-    const [userInput, setUserInput] = useState('')
-    const [filteredChar, setFilteredChar] = useState([])
-    const [isSearchVisiable, setIsSearchVisiable] = useState(false)
+const Titlepage = ({ apiData, error }) => {
+    const [userInput, setUserInput] = useState('');
+    const [filteredChar, setFilteredChar] = useState([]);
+    const [isSearchVisible, setIsSearchVisible] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const charPerPage = 40;
 
+    const searchIconClicked = () => {
+        setIsSearchVisible(!isSearchVisible);
+    };
 
-    const searchIconClicked = ()=> {
-        setIsSearchVisiable(!isSearchVisiable)
-    }
-
-    useEffect(()=> {
-        if(apiData) {
-            const result = apiData.filter(char => 
+    useEffect(() => {
+        if (apiData) {
+            const result = apiData.filter(char =>
                 char.name.toLowerCase().includes(userInput.toLowerCase().trim())
-            )
-            setFilteredChar(result)
+            );
+            setFilteredChar(result);
+            setCurrentPage(1)
         }
-    }, [userInput, apiData])
+    }, [userInput, apiData]);
+
+    const indexOfLastChar = currentPage * charPerPage;
+    const indexOfFirstChar = indexOfLastChar - charPerPage;
+    const currentChars = filteredChar.slice(indexOfFirstChar, indexOfLastChar);
+
+    const paginate = (number) => {
+        setCurrentPage(number)
+    }
 
     return (
         <div className='out-cont'>
             {error && <p className='error-message'>{error}</p>}
             <div className='search-container'>
                 <img src={searchLogo} alt='search icon' className='search-icon' onClick={searchIconClicked} />
-                {isSearchVisiable && (
+                {isSearchVisible && (
                     <div className='search-box'>
                         <form>
                             <label htmlFor='input-search'>
-                                <input 
+                                <input
                                     type='text'
                                     className='input-search'
                                     placeholder='Search Character...'
                                     value={userInput}
-                                    onChange={(e)=> setUserInput(e.target.value)}
+                                    onChange={(e) => setUserInput(e.target.value)}
                                 />
                             </label>
                         </form>
                     </div>
                 )}
-                
             </div>
             <div className='char-list'>
-                {filteredChar.length > 0 ? (
-                    filteredChar.map((char)=> (
+                {currentChars.length > 0 ? (
+                    currentChars.map((char) => (
                         <Link to={`/character/${char.id}`} className='char' key={char.id}>
-                            <img src={char.image || defaultImage} alt= {`Headshot of ${char.name}`} />
+                            <img src={char.image || defaultImage} alt={`Headshot of ${char.name}`} />
                             <p>{char.name}</p>
                         </Link>
                     ))
@@ -60,9 +70,15 @@ const Titlepage = ({apiData, error})=> {
                     <h1 className='no-char-message'>Sorry, can't find that character.</h1>
                 )}
             </div>
+            <Pagination 
+                charPerPage={charPerPage} 
+                total={filteredChar.length} 
+                paginate={paginate} 
+                currentPage={currentPage} 
+            />
         </div>
-    )
-}
+    );
+};
 
 Titlepage.propTypes = {
     apiData: PropTypes.arrayOf(

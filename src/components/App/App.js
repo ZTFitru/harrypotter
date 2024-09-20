@@ -28,7 +28,7 @@ const App = ()=> {
             <Navbar />
             <Routes>
                 <Route path='/' element={<Door />} />
-                <Route path='/home' element={<Titlepage apiData={apiData} error={error}/>} />
+                <Route path='/home' element={<Titlepage apiData={apiData} error={error} /> } />
                 <Route path='/:house' element={<SortedHouse />} />
                 <Route path='/character/:id' element={<Card />} />
                 <Route path='/loyalty/:loyaltyGroup' element={<Loyalty />} />
