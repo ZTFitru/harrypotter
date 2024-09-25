@@ -6,6 +6,8 @@ import defaultImage from '../../assets/default.jpg'
 const ArmyCard = ()=> {
 
     const [list, setList] = useState([])
+    const [userFont, setUserFont] = useState('harry-potter')
+
 
     useEffect(()=> {
         const userList = localStorage.getItem('army')
@@ -14,6 +16,10 @@ const ArmyCard = ()=> {
         }
     }, [])
 
+    const chnageFont = (userFont)=> {
+        setUserFont(userFont)
+    }
+
     const deleteCharacterBtn = (id)=> {
         const removedChar = list.filter(char => char.id !== id)
         setList(removedChar)
@@ -21,8 +27,12 @@ const ArmyCard = ()=> {
     }
 
     return (
-        <div className='army-outter'>
+        <div className={`army-outter ${userFont}`}>
             <h1>Your Army</h1>
+            <div className='font-selector'>
+                <button onClick={()=> chnageFont('harry-potter')}>Harry Potter</button>
+                <button onClick={() => chnageFont('arial')}>Arial</button>
+            </div>
             {list.length > 0 ? (
                 <ul className='army-cont'>
                     {list.map((char)=> (

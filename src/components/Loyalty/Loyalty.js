@@ -23,6 +23,8 @@ const sortedFonts = {
 const Loyalty = () => {
     const { loyaltyGroup } = useParams()
     const [apiCharacters, setApiCharacters] = useState([])
+    const [userFont, setUserFont] = useState('harry-potter')
+
 
     useEffect(()=> {
         sortedByGroup(loyaltyGroup)
@@ -33,9 +35,17 @@ const Loyalty = () => {
         .catch(err => console.log('Error:', err))
     }, [loyaltyGroup])
 
+    const chnageFont = (userFont)=> {
+        setUserFont(userFont)
+    }
+
     return (
-        <div className='sort-outter' style={{backgroundColor: sortedColors[loyaltyGroup]}}>
+        <div className={`sort-outter ${userFont}`} style={{backgroundColor: sortedColors[loyaltyGroup]}}>
             <h1>{loyaltyGroup}</h1>
+            <div className='font-selector'>
+                <button onClick={()=> chnageFont('harry-potter')}>Harry Potter</button>
+                <button onClick={() => chnageFont('arial')}>Arial</button>
+            </div>
             <div className='sort-list'>
                 {apiCharacters.map((char)=> (
                      <Link to={`/character/${char.id}`} className='sort-char' key={char.id}>

@@ -3,11 +3,23 @@ import './Card.css'
 import { useEffect, useState } from 'react'
 import defaultImage from '../../assets/default.jpg'
 import {getSingleCharacter} from '../ApiCalls'
+import deathEaters from '../../assets/DeathEaters.jpg'
+import hogwartsSchool from '../../assets/HogwartsSchoolOfWitchcraftAndWizardry.jpg'
+import orderOfPhoenix from '../../assets/OrderOfThePhoenix.jpg'
+import dumbledoreArmy from '../../assets/dumbledoreArmy.webp'
+
+const loyalImages = {
+    "Death Eaters": deathEaters,
+    "Order of the Phoenix": orderOfPhoenix,
+    "Hogwarts School of Witchcraft and Wizardry": hogwartsSchool,
+    "Dumbledore's Army": dumbledoreArmy
+}
 
 
 const Card = ()=> {
     const { id } = useParams()
     const [selectedChar, setSelectedChar] = useState([])
+    const [userFont, setUserFont] = useState('harry-potter')
 
     const [userList, setUserList] = useState(()=> {
         const savedCharacters = localStorage.getItem('army');
@@ -32,22 +44,33 @@ const Card = ()=> {
         .catch(err => console.log(err))
     }, [id])
 
+    const chnageFont = (userFont)=> {
+        setUserFont(userFont)
+    }
+
     return (
-        <div className='char-container'>
+        <div className={`char-container ${userFont}`} >
             <div className='char-card'>
                 <div className='char-pro'>
                     <img src={selectedChar.image || defaultImage} alt={`Head shot of ${selectedChar.name}`} />
                     <h1>{selectedChar.name}</h1>
+                    <div className='font-selector'>
+                        <button onClick={()=> chnageFont('harry-potter')}>Harry Potter</button>
+                        <button onClick={() => chnageFont('arial')}>Arial</button>
+                    </div>
                 </div>
                 <div className='char-details'>
                     <p>{selectedChar.overview}</p>
+                    
                     <div className='sorted-list'>
                         {selectedChar.loyalty && selectedChar.loyalty.length > 0 ? (
                             <p>
                                 {selectedChar.loyalty.map((group, index) => (
                                     <span key={index}>
-                                        <Link to={`/loyalty/${group}`}>{group}</Link>
-                                        {index < selectedChar.loyalty.length - 1 && ', '}
+                                        <Link to={`/loyalty/${group}`}>
+                                            <img src={loyalImages[group] || defaultImage} alt={group} className='loyalty-img' />
+                                        </Link>
+                                        {index < selectedChar.loyalty.length - 1 && ' • '}
                                     </span>
                                 ))}
                             </p>
