@@ -9,7 +9,7 @@
 
 .nav-right {
     display: flex;
-
+    text-decoration: none;
 }
 
 .icon-links {

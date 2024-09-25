@@ -77,6 +77,34 @@
     }
 }
 
+.harry-potter {
+    font-family: 'Harry Potter', sans-serif;
+}
+
+.arial {
+    font-family: Arial, sans-serif;
+}
+
+.comic-sans {
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.open-dyslexic {
+    font-family: 'Open Dyslexic', sans-serif;
+}
+
+.font-selector {
+    button {
+        background-color: #a62d2d;
+        color: #f1c40f;
+        border: 2px solid #f1c40f;
+        border-radius: 10px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+}
+
+
 @media only screen and (max-width: 760px) {
 
     .out-cont {

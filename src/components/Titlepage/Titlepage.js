@@ -14,6 +14,7 @@ const Titlepage = ({ apiData, error }) => {
     const [isSearchVisible, setIsSearchVisible] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const charPerPage = 40;
+    const [userFont, setUserFont] = useState('harry-potter')
 
     const searchIconClicked = () => {
         setIsSearchVisible(!isSearchVisible);
@@ -37,8 +38,13 @@ const Titlepage = ({ apiData, error }) => {
         setCurrentPage(number)
     }
 
+    const chnageFont = (userFont)=> {
+        // setUserFont(userFont)
+        setUserFont(prevFont => (prevFont === 'harry-potter' ? 'arial' : 'harry-potter'))
+    }
+
     return (
-        <div className='out-cont'>
+        <div className={`out-cont ${userFont}`} >
             {error && <p className='error-message'>{error}</p>}
             <div className='search-container'>
                 <img src={searchLogo} alt='search icon' className='search-icon' onClick={searchIconClicked} />
@@ -57,6 +63,11 @@ const Titlepage = ({ apiData, error }) => {
                         </form>
                     </div>
                 )}
+            </div>
+
+            <div className='font-selector'>
+                <button onClick={chnageFont}>Toogle Font</button>
+                {/* <button onClick={() => chnageFont('arial')}>Arial</button> */}
             </div>
             <div className='char-list'>
                 {currentChars.length > 0 ? (

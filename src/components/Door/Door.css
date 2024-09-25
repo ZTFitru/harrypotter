@@ -76,7 +76,7 @@
     inherits: false;
 }
   
-button {
+/* button {
     --blue: #0173ff;
     --radius: 50px;
     --rotate: 0deg;
@@ -119,7 +119,7 @@ button {
     to {
       --rotate: 360deg;
     }
-}
+} */
 
 @media only screen and (max-width: 762px) {
 

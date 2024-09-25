@@ -16,6 +16,7 @@ const SortedHouse = ()=> {
     const { house } = useParams()
     const [apiHouse, setApiHouse] = useState([]);
     const [error, setError] = useState('')
+    const [userFont, setUserFont] = useState('harry-potter')
 
     useEffect(()=> {
         sortedByHouseCall(house)
@@ -32,9 +33,18 @@ const SortedHouse = ()=> {
         )
     }
 
+    const chnageFont = (userFont)=> {
+        // setUserFont(userFont)
+        setUserFont(prevFont => (prevFont === 'harry-potter' ? 'arial' : 'harry-potter'))
+    }
+
     return (
-        <div className='data-container' style={{backgroundColor: houseColors[house]}}>
+        <div className={`data-container ${userFont}`} style={{backgroundColor: houseColors[house]}}>
             <h1>{house.toUpperCase()}</h1>
+            <div className='font-selector'>
+                <button onClick={chnageFont}>Toogle Font</button>
+                {/* <button onClick={() => chnageFont('arial')}>Arial</button> */}
+            </div>
             <div className='house-container'>
                 {apiHouse.length > 0 ? (
                     apiHouse.map(student => (
