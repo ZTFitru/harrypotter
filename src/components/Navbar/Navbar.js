@@ -14,7 +14,7 @@ const Navbar = ()=> {
                 </Link>
                 <div className='nav-right'>
                 <ul className={`icon-links `}>
-                    <li><NavLink to={'/mylist'} className={'nav-a'}>Your Army</NavLink></li>
+                    <li><NavLink to={'/mylist'} className={'nav-a'}>3 Vs. 3</NavLink></li>
                     <li><NavLink to={'/gryffindor'} className={'nav-g'}>Gryffindor</NavLink></li>
                     <li><NavLink to={'/hufflepuff'} className={'nav-h'}>Hufflepuff</NavLink></li>
                     <li><NavLink to={'/ravenclaw'} className={'nav-r'}>Ravenclaw</NavLink></li>

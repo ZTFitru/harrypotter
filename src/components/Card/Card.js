@@ -3,17 +3,17 @@ import './Card.css'
 import { useEffect, useState } from 'react'
 import defaultImage from '../../assets/default.jpg'
 import {getSingleCharacter} from '../ApiCalls'
-import deathEaters from '../../assets/DeathEaters.jpg'
-import hogwartsSchool from '../../assets/HogwartsSchoolOfWitchcraftAndWizardry.jpg'
-import orderOfPhoenix from '../../assets/OrderOfThePhoenix.jpg'
-import dumbledoreArmy from '../../assets/dumbledoreArmy.webp'
+// import deathEaters from '../../assets/DeathEaters.jpg'
+// import hogwartsSchool from '../../assets/HogwartsSchoolOfWitchcraftAndWizardry.jpg'
+// import orderOfPhoenix from '../../assets/OrderOfThePhoenix.jpg'
+// import dumbledoreArmy from '../../assets/dumbledoreArmy.webp'
 
-const loyalImages = {
-    "Death Eaters": deathEaters,
-    "Order of the Phoenix": orderOfPhoenix,
-    "Hogwarts School of Witchcraft and Wizardry": hogwartsSchool,
-    "Dumbledore's Army": dumbledoreArmy
-}
+// const loyalImages = {
+//     "Death Eaters": deathEaters,
+//     "Order of the Phoenix": orderOfPhoenix,
+//     "Hogwarts School of Witchcraft and Wizardry": hogwartsSchool,
+//     "Dumbledore's Army": dumbledoreArmy
+// }
 
 
 const Card = ()=> {
@@ -29,11 +29,15 @@ const Card = ()=> {
     const [addChar, setAddChar] = useState(false)
 
     const addCharacterBtn = ()=> {
-        if(!userList.some(char => char.id === selectedChar.id)) {
-            const list = [...userList, selectedChar]
-            setUserList(list)
-            localStorage.setItem('army', JSON.stringify(list))
-            setAddChar(true)
+        if(userList.length < 3) {
+            if(!userList.some(char => char.id === selectedChar.id)) {
+                const list = [...userList, selectedChar]
+                setUserList(list)
+                localStorage.setItem('army', JSON.stringify(list))
+                setAddChar(true)
+            }
+        } else {
+            alert('You can only add 3 characters to your list.')
         }
     }
 
@@ -67,10 +71,8 @@ const Card = ()=> {
                             <p>
                                 {selectedChar.loyalty.map((group, index) => (
                                     <span key={index}>
-                                        <Link to={`/loyalty/${group}`}>
-                                            <img src={loyalImages[group] || defaultImage} alt={group} className='loyalty-img' />
-                                        </Link>
-                                        {index < selectedChar.loyalty.length - 1 && ' • '}
+                                        <Link to={`/loyalty/${group}`}>{group}</Link>
+                                        {index < selectedChar.loyalty.length - 1 && ', '}
                                     </span>
                                 ))}
                             </p>
