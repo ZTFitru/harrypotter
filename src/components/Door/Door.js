@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './Door.css'
 import { useNavigate } from 'react-router-dom';
 
 
-const Door = ()=> {
+const Door = ({ onLandingPage })=> {
     const [isOpen, setIsOpen] = useState(false)
     const navigate = useNavigate()
 
@@ -24,6 +24,18 @@ const Door = ()=> {
         }
     }
 
+    const afterLandNav = ()=> {
+        onLandingPage()
+    }
+
+    useEffect(()=> {
+        onLandingPage()
+
+        setTimeout(()=> {
+            navigate('/home')
+        }, 2000)
+    }, [onLandingPage, navigate])
+
 
     return (
         <section className='door-cont'>
@@ -35,6 +47,7 @@ const Door = ()=> {
                 onClick={doorStatus}>
             </div>
             <h1>OPEN THE DOOR TO ENTER</h1>
+            <button onClick={afterLandNav}></button>
         </section>
     )
 }

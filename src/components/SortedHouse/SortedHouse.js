@@ -17,11 +17,12 @@ const SortedHouse = ()=> {
     const [apiHouse, setApiHouse] = useState([]);
     const [error, setError] = useState('')
     const [userFont, setUserFont] = useState('harry-potter')
+    const [charSearch, setCharSearch] = useState('')
 
     useEffect(()=> {
         sortedByHouseCall(house)
         .then(data => setApiHouse(data))
-        .catch(err => setError('Sorry, something went wront', err))
+        .catch(error => setError('Sorry, something went wront'))
     }, [house])
 
     if(error) {
@@ -34,20 +35,39 @@ const SortedHouse = ()=> {
     }
 
     const chnageFont = (userFont)=> {
-        // setUserFont(userFont)
         setUserFont(prevFont => (prevFont === 'harry-potter' ? 'arial' : 'harry-potter'))
     }
+
+    const searchForChar = (event)=> {
+        setCharSearch(event.target.value)
+    }
+
+    const filteredChar = apiHouse.filter(student => 
+        student.name.toLowerCase().includes(charSearch.toLowerCase())
+    )
 
     return (
         <div className={`data-container ${userFont}`} style={{backgroundColor: houseColors[house]}}>
             <h1>{house.toUpperCase()}</h1>
             <div className='font-selector'>
                 <button onClick={chnageFont}>Toogle Font</button>
-                {/* <button onClick={() => chnageFont('arial')}>Arial</button> */}
+            </div>
+            <div className='search-box-house'>
+                <form>
+                    <label htmlFor='input-search'>
+                        <input
+                            type='text'
+                            className='input-search'
+                            placeholder='Search Character...'
+                            value={charSearch}
+                            onChange={searchForChar}
+                        />
+                    </label>
+                </form>
             </div>
             <div className='house-container'>
-                {apiHouse.length > 0 ? (
-                    apiHouse.map(student => (
+                {filteredChar.length > 0 ? (
+                    filteredChar.map(student => (
                         <Link to={`/character/${student.id}`} key={student.id} className="card">
                             <img src={student.image || defaultImage} alt={`Headshot of ${student.name}`} />
                             <h2>{student.name}</h2>

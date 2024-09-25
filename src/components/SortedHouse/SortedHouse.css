@@ -53,6 +53,11 @@
     transform: scale(1.1);
 }
 
+.search-box-house {
+    display: flex;
+    justify-content: center;
+}
+
 @media only screen and (max-width: 760px) {
 
     .data-container {
