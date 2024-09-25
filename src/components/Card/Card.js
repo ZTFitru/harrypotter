@@ -49,7 +49,8 @@ const Card = ()=> {
     }, [id])
 
     const chnageFont = (userFont)=> {
-        setUserFont(userFont)
+        // setUserFont(userFont)
+        setUserFont(prevFont => (prevFont === 'harry-potter' ? 'arial' : 'harry-potter'))
     }
 
     return (
@@ -59,9 +60,9 @@ const Card = ()=> {
                     <img src={selectedChar.image || defaultImage} alt={`Head shot of ${selectedChar.name}`} />
                     <h1>{selectedChar.name}</h1>
                     <div className='font-selector'>
-                        <button onClick={()=> chnageFont('harry-potter')}>Harry Potter</button>
-                        <button onClick={() => chnageFont('arial')}>Arial</button>
-                    </div>
+                <button onClick={chnageFont}>Toogle Font</button>
+                {/* <button onClick={() => chnageFont('arial')}>Arial</button> */}
+            </div>
                 </div>
                 <div className='char-details'>
                     <p>{selectedChar.overview}</p>

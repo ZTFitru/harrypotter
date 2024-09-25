@@ -133,4 +133,10 @@
             font-size: 11px;
         }
     }
+
+    .font-selector {
+        button {
+            font-size: 11px;
+        }
+    }
 }

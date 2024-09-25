@@ -34,15 +34,16 @@ const SortedHouse = ()=> {
     }
 
     const chnageFont = (userFont)=> {
-        setUserFont(userFont)
+        // setUserFont(userFont)
+        setUserFont(prevFont => (prevFont === 'harry-potter' ? 'arial' : 'harry-potter'))
     }
 
     return (
         <div className={`data-container ${userFont}`} style={{backgroundColor: houseColors[house]}}>
             <h1>{house.toUpperCase()}</h1>
             <div className='font-selector'>
-                <button onClick={()=> chnageFont('harry-potter')}>Harry Potter</button>
-                <button onClick={() => chnageFont('arial')}>Arial</button>
+                <button onClick={chnageFont}>Toogle Font</button>
+                {/* <button onClick={() => chnageFont('arial')}>Arial</button> */}
             </div>
             <div className='house-container'>
                 {apiHouse.length > 0 ? (

@@ -129,6 +129,26 @@ ul li::marker {
     }
 }
 
+.font-selector {
+    button {
+        background-color: #a62d2d;
+        color: #f1c40f;
+        border: 2px solid #f1c40f;
+        border-radius: 10px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+}
+
+.hint-btn {
+    background-color: #f1c40f;
+    color: #a62d2d;
+    border: 2px solid #a62d2d;
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 1131px) {
     .army-list {
         img {
@@ -171,10 +191,10 @@ ul li::marker {
             height: 90px;
         }
         p {
-            font-size: 10px;
+            font-size: 14px;
         }
         button {
-            font-size: 10px;
+            font-size: 12px;
             font-weight: bold;
         }
     }
@@ -197,7 +217,23 @@ ul li::marker {
             height: 90px;
         }
         p {
-            font-size: 10px;
+            font-size: 14px;
         }
+        button {
+            font-size: 12px;
+            font-weight: bold;
+        }
+    }
+
+    .empty-message {
+        font-size: 25px;
+    }
+
+    .hint {
+        font-size: 15px;
+    }
+
+    .hint-btn {
+        font-size: 11px;
     }
 }
