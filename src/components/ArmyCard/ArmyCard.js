@@ -12,10 +12,9 @@ const ArmyCard = ()=> {
     const [resultMessage, setResultMessage] = useState('')
     const [hint, setHint] = useState(false)
 
-    const requiredCharIds = ['9e3f7ce4-b9a7-4244-b709-dae5c1f1d4a8', '3569d265-bd27-44d8-88e8-82fb0a848374', '4c7e6819-a91a-45b2-a454-f931e4a7cce3']
+    const requiredCharIds = ['efa802c8-ae18-4ae1-a524-49df21d05939', '6afb1960-febd-418d-b604-e50c1b59459b', 'f3c96d16-e0de-4417-9052-5259e6a8e781']
 
-    // const winngCharId = '79e02eb5-17c0-4dd9-bf55-aec03434812c'
-    const winningChar = 'Molly Weasley'
+    const winningChars = ['Molly Weasley', 'Harry Potter', 'Hermione Granger']
 
     const getChallengerChar = async ()=> {
         try {
@@ -42,7 +41,6 @@ const ArmyCard = ()=> {
     })
 
     const chnageFont = (userFont)=> {
-        // setUserFont(userFont)
         setUserFont(prevFont => (prevFont === 'harry-potter' ? 'arial' : 'harry-potter'))
     }
 
@@ -54,16 +52,10 @@ const ArmyCard = ()=> {
     }
 
     const userChallenge = (challenger)=> {
-        // console.log('challenger id: ', challenger.id)
-        // console.log('winning character id: ', winngCharId)
-        // const hasAllChar = list.length >= 3;
-        // setResultMessage(hasAllChar ? `You defeated ${challenger.name}` : `You lost to ${challenger.name}`)
-        // if(challenger.id !== winngCharId) {
-        //     setResultMessage(`You defeated ${challenger.name}`)
-        // } else {
-        //     setResultMessage(`You lost to ${challenger.name}`)
-        // }
-        if(list.some(char => char.name === winningChar)) {
+        const allNeededChars = winningChars.every(charName => 
+            list.some(char => char.name === charName)
+        )
+        if(allNeededChars) {
             setResultMessage(`You defeated ${challenger.name}`)
         } else {
             setResultMessage(`You lost to ${challenger.name}`)
@@ -76,15 +68,20 @@ const ArmyCard = ()=> {
 
     return (
         <div className={`army-outter ${userFont}`}>
-            <h1>Add Up To 3 Characters To Battle</h1>
+            <h1>Choose Wisely: You Need All Three!</h1>
             <div className='font-selector'>
                 <button onClick={chnageFont}>Toogle Font</button>
-                {/* <button onClick={() => chnageFont('arial')}>Arial</button> */}
             </div>
             <button onClick={hintFuntion} className='hint-btn'>
                 {hint ? 'Hide Hint' : 'Show Hint'}
             </button>
-            {hint && <p className='hint'>Hint: Must have Sister to Fabian and Gideon</p>}
+            {hint && (
+                <div>
+                    <p className='hint'>Hint: Must have the heart of the Burrow!</p>
+                    <p className='hint'>Hint: Must have the Wizard with a lightning scar!</p>
+                    <p className='hint'>Hint: Must have the brightest witch of her age!</p>
+                </div>
+            ) }
             {list.length > 0 ? (
                 <ul className='army-cont'>
                     <div className='army-display'>

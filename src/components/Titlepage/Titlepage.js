@@ -39,7 +39,6 @@ const Titlepage = ({ apiData, error }) => {
     }
 
     const chnageFont = (userFont)=> {
-        // setUserFont(userFont)
         setUserFont(prevFont => (prevFont === 'harry-potter' ? 'arial' : 'harry-potter'))
     }
 
@@ -67,7 +66,6 @@ const Titlepage = ({ apiData, error }) => {
 
             <div className='font-selector'>
                 <button onClick={chnageFont}>Toogle Font</button>
-                {/* <button onClick={() => chnageFont('arial')}>Arial</button> */}
             </div>
             <div className='char-list'>
                 {currentChars.length > 0 ? (

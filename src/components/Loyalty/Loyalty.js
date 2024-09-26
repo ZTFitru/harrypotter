@@ -24,6 +24,7 @@ const Loyalty = () => {
     const { loyaltyGroup } = useParams()
     const [apiCharacters, setApiCharacters] = useState([])
     const [userFont, setUserFont] = useState('harry-potter')
+    const [charSearch, setCharSearch] = useState('')
 
 
     useEffect(()=> {
@@ -36,24 +37,47 @@ const Loyalty = () => {
     }, [loyaltyGroup])
 
     const chnageFont = (userFont)=> {
-        // setUserFont(userFont)
         setUserFont(prevFont => (prevFont === 'harry-potter' ? 'arial' : 'harry-potter'))
     }
+
+    const searchForChar = (event)=> {
+        setCharSearch(event.target.value)
+    }
+
+    const filteredChar = apiCharacters.filter(student => 
+        student.name.toLowerCase().includes(charSearch.toLowerCase())
+    )
 
     return (
         <div className={`sort-outter ${userFont}`} style={{backgroundColor: sortedColors[loyaltyGroup]}}>
             <h1>{loyaltyGroup}</h1>
             <div className='font-selector'>
                 <button onClick={chnageFont}>Toogle Font</button>
-                {/* <button onClick={() => chnageFont('arial')}>Arial</button> */}
+            </div>
+            <div className='search-box-house'>
+                <form>
+                    <label htmlFor='input-search'>
+                        <input
+                            type='text'
+                            className='input-search'
+                            placeholder='Search Character...'
+                            value={charSearch}
+                            onChange={searchForChar}
+                        />
+                    </label>
+                </form>
             </div>
             <div className='sort-list'>
-                {apiCharacters.map((char)=> (
-                     <Link to={`/character/${char.id}`} className='sort-char' key={char.id}>
-                        <img src={char.image || defaultImage} alt={`Headshot of ${char.name}`} />
-                        <h2 style={{color: sortedFonts[loyaltyGroup]}}>{char.name}</h2>
-                    </Link>
-                ))}
+                {filteredChar.length > 0 ? (
+                    filteredChar.map((char)=> (
+                        <Link to={`/character/${char.id}`} className='sort-char' key={char.id}>
+                            <img src={char.image || defaultImage} alt={`Headshot of ${char.name}`} />
+                            <h2 style={{color: sortedFonts[loyaltyGroup]}}>{char.name}</h2>
+                        </Link>
+                    ))
+                ) : (
+                    <p className='no-loyal-message'>Sorry, can't find that character.</p>
+                )}
             </div>
         </div>
     )

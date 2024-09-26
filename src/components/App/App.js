@@ -16,6 +16,7 @@ const App = ()=> {
 
     const [apiData, setApiData] = useState([])
     const [error, setError] = useState('')
+    const [hasSeenDoor, setHasSeenDoor] = useState(false)
 
     useEffect(()=> {
         getCharacters()
@@ -25,9 +26,9 @@ const App = ()=> {
 
     return (
         <main className='out-cont'>
-            <Navbar />
+            <Navbar hasSeenDoor={hasSeenDoor} />
             <Routes>
-                <Route path='/' element={<Door />} />
+                <Route path='/' element={<Door onLandingPage={()=> setHasSeenDoor(true)}/>} />
                 <Route path='/home' element={<Titlepage apiData={apiData} error={error} /> } />
                 <Route path='/:house' element={<SortedHouse />} />
                 <Route path='/character/:id' element={<Card />} />

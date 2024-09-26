@@ -42,6 +42,10 @@
     }
 }
 
+.no-loyal-message {
+    color: white;
+}
+
 @media only screen and (max-width: 760px) {
     .sort-outter {
         h1 {
@@ -62,5 +66,9 @@
         h2 {
             font-size: 12px;
         }
+    }
+
+    .no-loyal-message {
+        font-size: 12px;
     }
 }

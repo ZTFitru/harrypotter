@@ -2,14 +2,14 @@ import './Navbar.css'
 import { Link, NavLink } from 'react-router-dom';
 import mainLogo from '../../assets/home-logo.jpg'
 
-const Navbar = ()=> {
+const Navbar = ({ hasSeenDoor })=> {
 
 
 
     return (
         <header className='nav-cont'>
             <nav className='navbar'>
-                <Link to={'/'} >
+                <Link to={hasSeenDoor ? '/home' : '/'} >
                     <img src={mainLogo} alt='Harry Potter Logo' />
                 </Link>
                 <div className='nav-right'>
